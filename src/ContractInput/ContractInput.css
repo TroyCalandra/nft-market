@@ -1,0 +1,29 @@
+.contract-metadata {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  margin: 2rem;
+}
+
+.contract-image {
+  max-width: 30%;
+}
+
+.contract-image img {
+  max-height: 200px;
+}
+
+.contract-name {
+  font-size: 1.5rem;
+}
+
+.contract-data {
+  text-align: left;
+  color: white;
+  margin: 0 1rem;
+  max-width: 70%;
+}
+
+.search-container {
+  margin: 2rem 2rem 0;
+}

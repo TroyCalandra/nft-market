@@ -1,0 +1,26 @@
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 32 32" height="32" width="32" id="svg2" sodipodi:version="0.32" inkscape:version="0.44" version="1.0" sodipodi:docbase="C:\Documents and Settings\Roman\Pulpit" sodipodi:docname="Sad_face.svg">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:cx="1243.0694" inkscape:cy="937.30193" inkscape:zoom="0.15218433" inkscape:document-units="px" inkscape:current-layer="layer1" width="2145px" height="2145px" showguides="true" inkscape:guide-bbox="true" inkscape:window-width="1024" inkscape:window-height="719" inkscape:window-x="-4" inkscape:window-y="-4"/>
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+   <line x1="6" y1="6" x2="26" y2="26" stroke="blue" stroke-width="2" />
+   <line x1="6" y1="26" x2="26" y2="6" stroke="blue" stroke-width="2" />
+   <line x1="16" y1="2" x2="16" y2="30" stroke="blue" stroke-width="2" />
+   <line x1="2" y1="16" x2="30" y2="16" stroke="blue" stroke-width="2" />
+   <circle cx="6" cy="6" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="26" cy="26" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="6" cy="26" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="26" cy="6" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="16" cy="2" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="16" cy="30" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="2" cy="16" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="30" cy="16" r="1" stroke="blue" stroke-width="3" fill="blue"/>
+   <circle cx="16" cy="16" r="4" stroke="blue" stroke-width="3" fill="white"/>
+</svg>
