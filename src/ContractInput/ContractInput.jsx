@@ -5,7 +5,11 @@ import InputBox from '../InputBox/InputBox';
 import Spinner from '../Spinner/Spinner';
 import defaultAbi from '../abis/NiftyBuilderInstance.json';
 import './ContractInput.css';
+
+//Default Values
 const contractAddress = '0x8825dd9237a3a3d4f768a826bccfa161d36fbedf';
+const tokenId = '30500010038';
+
 
 const ContractInput = () => {
   const [json, setJson] = useState({});
@@ -41,37 +45,31 @@ const ContractInput = () => {
     setJson(json);
   }
 
-  useEffect(() => {
-    async function getTokenURI() {
-      await loadWeb3();
-      const web3 = window.web3;
-      const accounts = await web3.eth.getAccounts();
-      const abi = await getAbi(contractAddress) || defaultAbi.abi;
-      const contract = new web3.eth.Contract(abi, contractAddress)
-      const totalSupply = await contract.methods.totalSupply().call({from: '0x0000000000000000000000000000000000000000'});
-      const tokenURI = await contract.methods.tokenURI('30500010038').call({from: '0x0000000000000000000000000000000000000000'});
-      await getContractMetadata(tokenURI);
-    }
-    getTokenURI();
-  }, []);
-
   const handleChange = (name, value) => {
     setFields({...fields, [name]: value})
   }
 
   const handleClick = async () => {
-    const contractAddress = fields['contract-address'];
-    const tokenId = fields['token-id'];
-    const web3 = window.web3;
+    const abi = await getAbi(fields['contract-address']);
+    const contract = new window.web3.eth.Contract(abi, fields['contract-address']);
+    const tokenURI = await contract.methods.tokenURI(fields['token-id']).call({from: '0x0000000000000000000000000000000000000000'});
+    await getContractMetadata(tokenURI);
+  }
+
+  const getTokenURIOnLoad = async () => {
+    await loadWeb3();
     const abi = await getAbi(contractAddress) || defaultAbi.abi;
-    const contract = new web3.eth.Contract(abi, contractAddress);
+    const contract = new window.web3.eth.Contract(abi, contractAddress)
     const tokenURI = await contract.methods.tokenURI(tokenId).call({from: '0x0000000000000000000000000000000000000000'});
     await getContractMetadata(tokenURI);
   }
 
+  useEffect(() => {
+    getTokenURIOnLoad();
+  }, []);
+
   return (
     <div className="card">
-    {console.log(json)}
       <div className="search-container flex flex-wrap flex-col sm:flex-nowrap justify-center">
         <div>
           <InputBox 
