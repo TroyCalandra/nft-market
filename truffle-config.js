@@ -1,5 +1,5 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const privateKey = ''
+const config = require("./app/config");
 require('babel-register');
 require('babel-polyfill');
 
@@ -11,18 +11,13 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     mainnet: { // mainnet
-      provider: () => new HDWalletProvider(privateKey, ''),
+      provider: () => new HDWalletProvider(config.walletPrivateKey, config.mainnetEthClient),
       network_id: 1, // Mainnet's id
       gas: 0,
     },
-    ropsten: { // ropsten
-      provider: () => new HDWalletProvider(privateKey, ''),
-      network_id: 3, // Ropsten's id
-      gas: 8000000, // Ropsten has a lower block limit than mainnet
-    },
-    kovan: { // kovan
-      provider: () => new HDWalletProvider(privateKey, ''),
-      network_id: 42, // Kovan's id
+    goerli: { // goerli
+      provider: () => new HDWalletProvider(config.walletPrivateKey, config.goerliEthClient),
+      network_id: 5, // Goerli's id
       gas: 8000000, 
     }
   },

@@ -3,12 +3,12 @@ import Web3 from 'web3';
 import Button from '../Button/Button';
 import InputBox from '../InputBox/InputBox';
 import Spinner from '../Spinner/Spinner';
-import defaultAbi from '../abis/NiftyBuilderInstance.json';
+import defaultAbi from '../abis/Snake.json';
 import './ContractInput.css';
 
 //Default Values
-const contractAddress = '0x8825dd9237a3a3d4f768a826bccfa161d36fbedf';
-const tokenId = '30500010038';
+const contractAddress = '0x98da7c05c5320636b9b40ce36f704466b1c90b9f';
+const tokenId = '1';
 
 
 const ContractInput = () => {
@@ -102,6 +102,7 @@ const ContractInput = () => {
           </div>
         </div>
       </div>
+      <button onClick={() => window.open('http://localhost:3001/public/snake.html', '_blank')}>Play Now</button>
     </div>
   )
 

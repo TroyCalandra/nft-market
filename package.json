@@ -26,9 +26,9 @@
     "web3": "^1.0.0-beta.55"
   },
   "scripts": {
-    "start": "NODE_ENV=production node server",
+    "start": "cross-env NODE_ENV=production node server",
     "build:tailwind": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start-dev": "concurrently \"nodemon server\" \"npm run build:tailwind && npm run start:react\"",
+    "start-dev": "cross-env NODE_ENV=local concurrently \"nodemon server\" \"npm run build:tailwind && npm run start:react\"",
     "start:react": "react-scripts start",
     "build": "react-scripts build",
     "postbuild": "rimraf build/**/*.map",
@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.5",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "concurrently": "^6.0.0",

@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
+const config = require('../config');
+const fs = require('fs');
 
-const etherscan_endpoint = 'https://api.etherscan.io/api?module=contract&action=getabi'
-const apiKey = '';
+const etherscan_endpoint = co nfig.etherscanEndpoint;
+const apiKey = config.etherscanApiKey;
 
 const getEtherscanUrl = () => {
   return etherscan_endpoint + '&apikey=' + apiKey;
@@ -15,6 +17,7 @@ router.get('/health', (req, res) => {
 
 router.get('/getAbi', async (req, res) => {
   const url = getEtherscanUrl() + '&address=' + req.query.address;
+  console.log(url)
   try {
     const response = await axios.get(url)
     res.send({...response.data})
@@ -27,6 +30,14 @@ router.get('/getAbi', async (req, res) => {
 router.get('/getContractMetadata', async (req, res) => {
     try {
       const response = await axios.get(req.query.url);
+      
+      if (response.data && response.data.html) {
+        const html = await axios.get(response.data.html);
+        fs.writeFile('./build/index.html', html.data, (err) => {
+          if (err) throw err;
+          console.log('The "data to append" was appended to file!');
+        });
+      }
       res.send({...response.data})
     } catch (error) {
       console.error(error);
