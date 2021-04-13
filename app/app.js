@@ -20,13 +20,19 @@ app.use(cookieParser());
 
 app.use('/api', routes);
 
+app.get('/games/:name', async (req, res) => {
+  console.log(req.params.name)
+  res.sendFile(req.params.name, {root: path.join(__dirname, '../tmp') })
+})
 
-if(true || process.env.NODE_ENV === 'production') {
+if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../build')))
 
   app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build', 'index.html'))
   })
+} else {
+  app.use(express.static('public'))
 }
 
 module.exports = app;

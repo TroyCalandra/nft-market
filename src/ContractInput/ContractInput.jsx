@@ -101,7 +101,7 @@ const ContractInput = () => {
           </div>
         </div>
       </div>
-      <button onClick={() => window.open('http://localhost:3001/snake.html', '_blank')}>Play Now</button>
+      <button onClick={() => window.open('http://localhost:3001/games/snake.html', '_blank')}>Play Now</button>
     </div>
   )
 
