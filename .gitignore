@@ -3,6 +3,7 @@
 # misc
 /app/config/defaults.js
 /app/config/local.js
+/tmp
 
 # dependencies
 /node_modules
