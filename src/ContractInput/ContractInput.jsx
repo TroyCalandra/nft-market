@@ -3,7 +3,6 @@ import Web3 from 'web3';
 import Button from '../Button/Button';
 import InputBox from '../InputBox/InputBox';
 import Spinner from '../Spinner/Spinner';
-import defaultAbi from '../abis/Snake.json';
 import './ContractInput.css';
 
 //Default Values
@@ -58,7 +57,7 @@ const ContractInput = () => {
 
   const getTokenURIOnLoad = async () => {
     await loadWeb3();
-    const abi = await getAbi(contractAddress) || defaultAbi.abi;
+    const abi = await getAbi(contractAddress);
     const contract = new window.web3.eth.Contract(abi, contractAddress)
     const tokenURI = await contract.methods.tokenURI(tokenId).call({from: '0x0000000000000000000000000000000000000000'});
     await getContractMetadata(tokenURI);
@@ -102,7 +101,7 @@ const ContractInput = () => {
           </div>
         </div>
       </div>
-      <button onClick={() => window.open('http://localhost:3001/public/snake.html', '_blank')}>Play Now</button>
+      <button onClick={() => window.open('http://localhost:3001/snake.html', '_blank')}>Play Now</button>
     </div>
   )
 
