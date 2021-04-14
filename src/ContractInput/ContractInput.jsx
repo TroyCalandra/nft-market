@@ -99,9 +99,26 @@ const ContractInput = () => {
           <div className="contract-description">
             <p>{json.description}</p>
           </div>
+          <div className="my-2">
+            {json.html && 
+            <button 
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+              onClick={() => window.open('http://localhost:3001/games/' + json.name + '.html', '_blank')}>
+              Play Now
+            </button>
+            }
+          </div>
+          <div className="my-2">
+            {json.html && 
+            <a 
+              href={'https://goerli.etherscan.io/token/' + contractAddress}
+              target='__blank'>
+              Etherscan
+            </a>
+            }
+          </div>
         </div>
       </div>
-      <button onClick={() => window.open('http://localhost:3001/games/snake.html', '_blank')}>Play Now</button>
     </div>
   )
 
