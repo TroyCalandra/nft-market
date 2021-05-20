@@ -1,0 +1,18 @@
+.contract-metadata {
+  margin: 2rem;
+  display: grid;
+  grid: auto / repeat(3, 1fr);
+  grid-gap: 40px 20px;
+}
+
+@media (max-width: 62em){
+  .contract-metadata {
+    grid: auto / repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 43em){
+  .contract-metadata {
+    grid: auto / repeat(1, 1fr);
+  }
+}
