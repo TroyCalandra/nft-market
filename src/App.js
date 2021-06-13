@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import Header from './Header/Header.jsx';
-import ComponentOne from './ComponentOne/ComponentOne';
-import ContractInput from './ContractInput/ContractInput';
+import TokenDash from './TokenDash/TokenDash';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-center">
       <Header />
-      <ContractInput />
+      <TokenDash />
     </div>
   );
 }

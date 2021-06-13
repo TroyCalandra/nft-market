@@ -3,14 +3,12 @@ import Web3 from 'web3';
 import TokenCards from '../TokenCards/TokenCards';
 import Spinner from '../Spinner/Spinner';
 import SearchBar from '../SearchBar/SearchBar';
-import './ContractInput.css';
+import './TokenDash.css';
 
 //Default Values
 const contractAddress = '0x2952B7A89a567a89C49f3F0511Bc4946bEcA3FF1';
-const defaultTokenId = '0';
 
-
-const ContractInput = () => {
+const TokenDash = () => {
   const [fields, setFields] = useState({});
   const [tokens, setTokens] = useState([]);
 
@@ -85,4 +83,4 @@ const ContractInput = () => {
 
 }
 
-export default ContractInput;
+export default TokenDash;

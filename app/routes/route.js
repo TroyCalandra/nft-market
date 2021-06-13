@@ -22,7 +22,7 @@ router.get('/getAbi', async (req, res) => {
     const response = await axios.get(url)
     res.send({...response.data})
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.send({message: error});
   }
 })

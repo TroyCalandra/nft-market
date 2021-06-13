@@ -2,14 +2,15 @@ import React from 'react';
 import './TokenCard.css';
 
 const TokenCard = (props) => {
+  const baseURL = window.location.href === "http://localhost:3000/" ? "http://localhost:3001/" : "/";
 
   return (
-      <div className="test">
-        <div className="contract-image">
-          <img style={{borderRadius: '.875rem'}} src={props.token.image} />
+      <div>
+        <div className="contract-image m-auto" style={{maxWidth: 200}}>
+          <img class="rounded-xl" src={props.token.image} />
         </div>
-        <div style={{textAlign: 'left'}}>
-          <div className="contract-name">
+        <div className="text-left m-auto" style={{maxWidth: 200}}>
+          <div className="text-2xl">
             <h2>{props.token.name}</h2>
           </div>
           <div className="contract-description">
@@ -19,7 +20,7 @@ const TokenCard = (props) => {
             {props.token.html && 
             <button 
               className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-              onClick={() => window.open('http://localhost:3001/games/' + props.token.name + '.html', '_blank')}
+              onClick={() => window.open(baseURL + 'games/' + props.token.name + '.html', '_blank')}
               >
               Play Now
             </button>

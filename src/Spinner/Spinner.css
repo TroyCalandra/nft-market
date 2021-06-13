@@ -4,7 +4,6 @@
   animation: spinner 1.5s linear infinite;
   height: 100px;
   width: 100px;
-  margin: auto;
 }
 
 @-webkit-keyframes spinner {

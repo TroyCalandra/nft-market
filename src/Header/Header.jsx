@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 
-
-
-
 const Header = () => {
     const [isOpen, open] = useState(false);
 
@@ -20,7 +17,7 @@ const Header = () => {
             </div>
             <div className={"flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"}>
             <div className={"flex-shrink-0 text-gray-300 flex items-center"}>
-                <img alt="logo" src="../../favicon.svg" style={{maxWidth: '26px', margin: '0 4px'}} /> <h2>Elastichain</h2>
+                <img alt="logo" src="../../favicon.svg" className="my-0 mx-1" style={{maxWidth: '26px'}} /> <h2>Elastichain</h2>
             </div>
             <div className={"hidden sm:block sm:ml-6"}>
                 <div className={"flex"}>
