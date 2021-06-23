@@ -1,8 +1,11 @@
 .contract-metadata {
-  margin: 2rem;
+  margin: 5rem 0;
   display: grid;
   grid: auto / repeat(3, 1fr);
   grid-gap: 40px 20px;
+  border: .25rem solid #31353f;
+  border-bottom: none;
+  padding: 2rem 0;
 }
 
 @media (max-width: 62em){

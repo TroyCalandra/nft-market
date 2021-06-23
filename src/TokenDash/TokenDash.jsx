@@ -73,17 +73,20 @@ const TokenDash = () => {
   };
 
   return (
-    <div className="card">
-        <div style={{margin: '1rem 2rem 2rem', textAlign: 'right', display: 'flex', justifyContent: 'flex-end'}}>
-          <div style={{maxWidth: '30.75rem', height: '3.5rem'}}>
-            <span style={{fontSize: '0.875rem', fontWeight: 500}}>
-              {(userAddress && 'Connected to ' + userAddress) 
-              || <Button className="bg-fuchsia-100 border-fuchsia-100 text-shell-100" content={"Connect to Wallet"} onClick={connectToMetaMask} />}
-            </span>
-          </div>
+    <div className="card max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div style={{margin: '1rem auto 2rem', textAlign: 'right', display: 'flex', justifyContent: 'flex-end'}}>
+        <div style={{maxWidth: '30.75rem', height: '3.5rem'}}>
+            <div>Ropsten Only!</div>
+            {(userAddress && <span style={{fontSize: '0.875rem', fontWeight: 500}}>{'Connected to ' + userAddress}</span>) 
+            || <Button 
+            className="bg-fuchsia-100 border-fuchsia-100 text-shell-100" 
+            content={"Connect to Wallet"} 
+            onClick={connectToMetaMask} 
+            />}
         </div>
-        <TokenCards tokens={tokens} purchaseToken={purchaseToken} />
-        {tokens < 1 && <Spinner />}
+      </div>
+      <TokenCards tokens={tokens} purchaseToken={purchaseToken} />
+      {tokens < 1 && <Spinner />}
     </div>
   )
 
