@@ -6,7 +6,7 @@ const TokenCards = (props) => {
 
     return (
       <div className="contract-metadata">
-        {props.tokens.map((token) => <TokenCard token={token} />)}
+        {props.tokens.map((token) => <TokenCard key={token.id} token={token} purchaseToken={props.purchaseToken} />)}
       </div>
     )
 }

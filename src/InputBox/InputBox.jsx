@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './InputBox.css';
 
 const InputBox = ({name, placeholder, onChange}) => {
-  const [value, updateValue] = useState({});
 
   return(
     <div className="w-full">

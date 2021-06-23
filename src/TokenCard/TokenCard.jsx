@@ -1,13 +1,14 @@
 import React from 'react';
+import Button from '../Button/Button';
 import './TokenCard.css';
 
 const TokenCard = (props) => {
   const baseURL = window.location.href === "http://localhost:3000/" ? "http://localhost:3001/" : "/";
 
   return (
-      <div>
+      <div key={props.token.id}>
         <div className="contract-image m-auto" style={{maxWidth: 200}}>
-          <img class="rounded-xl" src={props.token.image} />
+          <img className="rounded-xl" alt={props.token.name + ' Image'} src={props.token.image} />
         </div>
         <div className="text-left m-auto" style={{maxWidth: 200}}>
           <div className="text-2xl">
@@ -16,6 +17,7 @@ const TokenCard = (props) => {
           <div className="contract-description">
             <p>{props.token.description}</p>  
           </div>
+          <Button content={"Buy Token"} onClick={() => props.purchaseToken(props.token.id)} />
           <div className="my-2">
             {props.token.html && 
             <button 

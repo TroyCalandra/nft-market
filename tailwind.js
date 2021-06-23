@@ -125,6 +125,12 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+      fuchsia: {
+        100: '#b706a5',
+      },
+      shell: {
+        100: '#f5f3f0',
+      },
     },
     spacing: {
       px: '1px',

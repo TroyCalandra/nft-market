@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Header from './Header/Header.jsx';
 import TokenDash from './TokenDash/TokenDash';
 import './App.css';
