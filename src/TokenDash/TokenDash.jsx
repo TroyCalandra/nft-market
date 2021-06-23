@@ -32,6 +32,10 @@ const TokenDash = () => {
     const contract = new window.web3.eth.Contract(abi, arcadeAddress)
     let tokenMetadata = [];
     for(let i = 0; i < 5; i++) {
+      let owner = await contract.methods.ownerOf(i).call({from: '0x0000000000000000000000000000000000000000'});
+      if (owner !== '0x30CFb2767fC6022BB44F69F4Ab84D37437E6cB6d') {
+        continue;
+      }
       const result = await getTokenMetadata(contract, i);
       tokenMetadata = [...tokenMetadata, {...result, id: i}];
     }
@@ -73,7 +77,7 @@ const TokenDash = () => {
         <div style={{margin: '1rem 2rem 2rem', textAlign: 'right', display: 'flex', justifyContent: 'flex-end'}}>
           <div style={{maxWidth: '30.75rem', height: '3.5rem'}}>
             <span style={{fontSize: '0.875rem', fontWeight: 500}}>
-              {userAddress && 'Connected to ' + userAddress 
+              {(userAddress && 'Connected to ' + userAddress) 
               || <Button className="bg-fuchsia-100 border-fuchsia-100 text-shell-100" content={"Connect to Wallet"} onClick={connectToMetaMask} />}
             </span>
           </div>
