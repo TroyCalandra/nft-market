@@ -7,11 +7,11 @@ const TokenCard = (props) => {
 
   return (
       <div key={props.token.id}>
-        <div className="contract-image m-auto" style={{maxWidth: 200}}>
+        <div className="contract-image m-auto" style={{maxWidth: 200, background: 'black', minHeight: 200}}>
           <img className="rounded-xl" alt={props.token.name + ' Image'} src={props.token.image} />
         </div>
         <div className="text-left m-auto" style={{maxWidth: 200}}>
-          <div className="text-2xl">
+          <div className="text-2xl" style={{minHeight: 64}}>
             <h2>{props.token.name}</h2>
           </div>
           <div className="contract-description">

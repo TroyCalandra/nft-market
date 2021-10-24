@@ -31,7 +31,7 @@ const TokenDash = () => {
     const abi = await getAbi(arcadeAddress);
     const contract = new window.web3.eth.Contract(abi, arcadeAddress)
     let tokenMetadata = [];
-    for(let i = 0; i < 5; i++) {
+    for(let i = 26; i < 30; i++) {
       let owner = await contract.methods.ownerOf(i).call({from: '0x0000000000000000000000000000000000000000'});
       if (owner !== '0x30CFb2767fC6022BB44F69F4Ab84D37437E6cB6d') {
         continue;

@@ -28,7 +28,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node server",
     "build:tailwind": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start-dev": "cross-env NODE_ENV=local concurrently \"nodemon server\" \"npm run build:tailwind && npm run start:react\"",
+    "start-dev": "cross-env NODE_ENV=local concurrently \"nodemon server\" \"npm run start:react\"",
     "start:react": "react-scripts start",
     "build": "react-scripts build",
     "postbuild": "rimraf build/**/*.map",
