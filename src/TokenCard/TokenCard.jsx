@@ -12,7 +12,7 @@ const TokenCard = (props) => {
         </div>
         <div className="text-left m-auto" style={{maxWidth: 200}}>
           <div className="text-2xl" style={{minHeight: 64}}>
-            <h2>{props.token.name}</h2>
+            <h2>{`${props.token.name} #${props.token.id}`}</h2>
           </div>
           <div className="contract-description">
             <p>{props.token.description}</p>  
@@ -22,7 +22,7 @@ const TokenCard = (props) => {
             {props.token.html && 
             <button 
               className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-              onClick={() => window.open(baseURL + 'games/' + props.token.name + '.html', '_blank')}
+              onClick={() => window.open(baseURL + 'games/' + props.token.html.split('/').pop().split('.')[0] + props.token.id + '.html', '_blank')}
               >
               Play Now
             </button>

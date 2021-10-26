@@ -33,7 +33,7 @@ router.get('/getContractMetadata', async (req, res) => {
       
       if (response.data && response.data.html) {
         const html = await axios.get(response.data.html);
-        fs.writeFile('tmp/' + response.data.name + '.html', html.data, (err) => {
+        fs.writeFile('tmp/' + req.query.url.split('/').pop().split('.')[0]+req.query.tokenId + '.html', html.data, (err) => {
           if (err) throw err;
           console.log('The "data to append" was appended to file!');
         });
